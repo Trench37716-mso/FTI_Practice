@@ -12,9 +12,11 @@
         <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
-        #map {
-            width: 706px;
-            height: 851px;
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
         }
         </style>
         <title></title>
@@ -67,7 +69,7 @@
             crs: crs,
             continuousWorld: false,
             worldCopyJump: false, 
-            zoomControl:true, maxZoom:28, minZoom:1
+            zoomControl:true, maxZoom:24, minZoom:2
         }).fitBounds([[3.8346884139732555,-11.608816642770297],[9.068219625642048,-7.247861213906892]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
@@ -164,8 +166,8 @@
             pane: 'pane_GoogleHybrid_1',
             opacity: 1.0,
             attribution: '',
-            minZoom: 1,
-            maxZoom: 28,
+            minZoom: 2,
+            maxZoom: 24,
             minNativeZoom: 0,
             maxNativeZoom: 18
         });
@@ -781,10 +783,10 @@
         L.control.layers(baseMaps,{'<img src="legend/TotalFemalefrom_10005000_7.png" /> Total Female from_1000-5000': layer_TotalFemalefrom_10005000_7,'<img src="legend/TotalMalefrom_10005000_6.png" /> Total Male from_1000-5000': layer_TotalMalefrom_10005000_6,'<img src="legend/Total_exceeding20000_5.png" /> Total_exceeding 20000': layer_Total_exceeding20000_5,'<img src="legend/Total_less1000_4.png" /> Total_less1000': layer_Total_less1000_4,'<img src="legend/LBR_ADMIN2_REPROJECTED_3.png" /> LBR_ADMIN2_REPROJECTED': layer_LBR_ADMIN2_REPROJECTED_3,'<img src="legend/LBR_ADMIN2_REPROJECTED_REFACTORED_2.png" /> LBR_ADMIN2_REPROJECTED_REFACTORED': layer_LBR_ADMIN2_REPROJECTED_REFACTORED_2,"Google Hybrid": layer_GoogleHybrid_1,'<img src="legend/WorldMap_0.png" /> World Map': layer_WorldMap_0,}).addTo(map);
         setBounds();
         map.addControl(new L.Control.Search({
-            layer: layer_TotalFemalefrom_10005000_7,
+            layer: layer_LBR_ADMIN2_REPROJECTED_REFACTORED_2,
             initial: false,
             hideMarkerOnCollapse: true,
-            propertyName: 'district_T'}));
+            propertyName: 'FNID'}));
         document.getElementsByClassName('search-button')[0].className +=
          ' fa fa-binoculars';
         </script>
